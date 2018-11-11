@@ -1,0 +1,496 @@
+@import "theme/theme_variables";  // <--------- Add your variables into this file. Also add variables to overwrite Bootstrap or UnderStrap variables here
+@import "assets/bootstrap4";// <--------- Loads Bootstrap3 or Bootstrap4. Change from /bootstrap3 to /bootstrap4 Watch out! just for testing in the moment!
+@import "understrap/understrap";// <-------- Loads the UnderStrap defaults. Just a few classes to incorporate BS in WP
+@import "understrap/woocommerce";// <-------- Loads WooCommerce style fixes. Comment out if you aren't using WooCommerce
+
+//Optional files - If you dont use the corresponding scripts/fonts comment em out
+@import "assets/font-awesome"; // <------- Font Awesome Icon font
+@import "assets/underscores"; // <------- Underscores media styles
+
+// Any additional imported files //
+@import "theme/theme";  // <--------- That's where you can add your own design. Thats your part!
+@import "theme/contact-form7"; // Contact Form 7 - Bootstrap 4 support
+
+//
+// GLOBAL STYLES
+//
+
+h1 {
+    font-size: 3em;
+}
+
+p {
+    font-size: 1.5em;
+}
+
+.space_1em {
+    padding: 1em 0;
+}
+
+.space_btwn_1em {
+    padding: 0 1em;
+}
+
+.space_2em {
+    padding: 2em 0;
+}
+
+//
+// NAVIGATION   //
+//
+
+.tr_title {
+    color: #fff;
+    position: relative;
+    top: 12px;
+
+    h1 {
+        all: unset;
+        font-size: 1.6em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    @media (max-width: 762px) {
+        text-align: left;
+        position: relative;
+
+        h1 {
+            font-size: 1em;
+        }
+
+        p {
+            font-size: .6em;
+        }
+    }
+}
+
+nav {
+    img.img-fluid {
+        width: auto;
+        height: 60px;
+    }
+
+    @media (max-width: 767px) {
+
+        img.img-fluid {
+            display: none;
+        }
+    }
+
+    li {
+        font-size: 1.2em;
+        //             padding-right: .6em;
+        text-transform: uppercase;
+    }
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+}
+
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+    color: #aade5e;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    //    color: #16181b;
+    //    text-decoration: none;
+    background-color: #98bce0bd;
+}
+
+//
+// Make Full Page Transparent Header
+//
+
+ul#main-menu {
+    text-align: right;
+}
+
+@media (max-width: 330px) {
+    .the_content {
+        h1 {
+            font-size: 40px;
+        }
+        p {
+            font-size: 15px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    ul#main-menu {
+        position: relative;
+        text-align: left;
+        background-color: rgba(0, 0, 0, 0.7);
+        width: 200px;
+        padding: 1em;
+    }
+}
+
+
+.navbar-wrapper {
+    position:relative;
+}
+
+.carousel {
+    top: 0;
+}
+
+.carousel-inner {
+    width: 100%;
+    overflow: hidden;
+}
+
+.navbar {
+    position:absolute;
+    top:0;
+    z-index:10;
+    width:100%;
+    padding: .8em 3.5em;
+}
+
+@media (max-width: 762px) { //mobile
+    .navbar-brand {
+        display: none;
+    }
+
+    .navbar {
+        padding: .2em .5em;
+    }
+}
+
+.bg-primary {
+    background-color: transparent !important;
+}
+
+//
+//CAROUSEL
+//
+
+#section-1 {
+    .carousel-item {
+        height: 100vh;
+        width: 100%;
+        background: no-repeat center center scroll;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .col {
+        padding-right: unset;
+        padding-left: unset;
+    }
+
+    .content_overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .the_content {
+
+        justify-content: center;
+        align-content: center;
+        margin: auto;
+        color: #fff;
+        max-width: 800px;
+        text-align: center;
+        // font-size: 8em;
+    }
+
+    li { //indicators
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin: 2em;
+    }
+
+    @media (max-width: 767px) {
+        .carousel-item {
+            background-attachment: scroll;
+        }
+
+        li { //indicators, hidden on mobile
+            display: none !important;
+        }
+    }
+
+    @media (max-width: 900px) {
+        .the_content {
+            padding: 2.2em;
+            padding-top: 20%;
+
+            br {
+                display: none;
+            }
+        }
+    }
+}
+
+//
+//WHO WE ARE
+//
+
+#section-2 {
+    box-shadow:
+        inset 0px 11px 8px -10px #000,
+        inset 0px -11px 8px -10px #000;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    background-color: #606b8082;
+
+    .card_center {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin: auto;
+    }
+
+    .card_images_container {
+         position: relative;
+    }
+
+    .card-img-top {
+        position: relative;
+        //        top: 0;
+        //        bottom: 0;
+        //        left: 0;
+        //        right: 0;
+        width: 100%;
+        height: 20vw;
+        object-fit: cover;
+    }
+
+    .image_circle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        margin: auto;
+        border-radius: 50%;
+    }
+
+
+    @media (max-width: 1465px) {
+        .card-img-top {
+            height: 26vw;
+        }
+
+    }
+    @media (max-width: 1089px) {
+        .card-img-top {
+            height: 32vw;
+        }
+    }
+    @media (max-width: 768px) {
+        .card-img-top {
+            height: 36vw;
+        }
+    }
+    @media (max-width: 600px) {
+        .card-img-top {
+            height: 50vw;
+        }
+    }
+
+    @media (max-width: 414px) {
+        .card-img-top {
+            height: 80vw;
+        }
+    }
+
+    .card-title {
+        min-height: 20px;
+
+    }
+
+    .card-body {
+        background-color: #f6fdfa !important;
+        min-height: 340px;
+
+    }
+
+    p {
+        font-size: .9em;
+    }
+
+
+    @media (max-width: 1583px){
+        .card-body {
+            min-height: 400px;
+        }
+    }
+
+    @media (min-width: 900px) and (max-width: 1240px) {
+        .card-body {
+            min-height: 500px;
+        }
+    }
+
+    @media (max-width: 900px) {
+        .container {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .card-body {
+            min-height: 240px;
+        }
+    }
+}
+
+// Inner Pages
+
+#section-4 {
+    .header_background {
+        position: relative;
+        height: 36vh;
+        width: 100%;
+        background: no-repeat center center scroll;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .content_overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .the_content {
+        justify-content: center;
+        align-content: center;
+        margin: auto;
+        color: #fff;
+        max-width: 800px;
+        text-align: center;
+
+        h1 {
+            text-transform: uppercase;
+            padding-top: .6em;
+        }
+    }
+
+    @media (max-width: 600px) {
+
+         .carousel-item {
+             height: 12vh;
+        }
+
+        .the_content h1 {
+            font-size: 2.5rem;
+        }
+    }
+}
+
+//
+//CUSTOM CONTENT AREA
+//
+
+#section-5 {
+    .custom_area {
+        display: flex;
+        background-color: #606b8082;
+        padding: 2em;
+
+        .custom_content {
+            justify-content: center;
+            align-content: center;
+            margin: auto;
+            background-color: #fff;
+            width: 80%;
+            height: auto;
+            padding: 2em;
+            border-radius: 15px;
+
+            p {
+                font-size: 1em;
+                margin-bottom: 0;
+                padding-bottom: 1em;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        .custom_area {
+            padding: 1em;
+        }
+        .custom_content {
+            padding: 1em !important;
+            width: 100% !important;
+        }
+    }
+}
+
+//
+//CONTACT
+//
+
+#section-3 {
+    background-color: #2f2e2e;
+    color: #fff;
+
+    .rk_contact_section {
+        padding-top: 15%;
+        padding-bottom: 15%;
+    }
+
+    .btn-outline-primary, .wpcf7 input[type=submit] {
+        color: #fff !important;
+        background-color: transparent;
+        background-image: none;
+        border-color: #fff !important;
+    }
+
+    @media (max-width: 900px) {
+        .rk_contact_section {
+            text-align: center;
+        }
+    }
+}
+
+#section-4 {
+  .carousel-item {
+      height: 50vh;
+ }
+}
+
+footer {
+    h6 {
+        font-size: 10px;
+    }
+
+    a {
+        color: #fff;
+
+        &:hover {
+            color: yellow;
+        }
+    }
+}
